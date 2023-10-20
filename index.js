@@ -8,42 +8,47 @@ const questions = [
         {
             message: 'What is the title of your project?',
             type: 'input',
-            name: 'title'
+            name: 'title',
         },
         {
             message: 'What is the name of the Github repository?',
             type: 'input',
-            name: 'githubName'
+            name: 'githubName',
         },
         {
             message: 'Enter a description for your project.',
             type: 'input',
-            name: 'description'
+            name: 'description',
         },
         {
             message: 'Enter a description for your project.',
             type: 'list',
             name: 'description',
-            choices: ['mit', 'agpl', 'apache', 'unlicense', 'bsd-2-clause']
-        },
+            choices: ['mit', 'agpl', 'apache', 'unlicense', 'bsd-2-clause'],
+        }
     ];
     
 //* add type, name, and message for each question
 //* add questions:  added readme sections (description, usage, license, etc)
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
+const writeToFile = (fileName, data) => {
     //* use FS module to write data and fileName to readme file
+    fs.writeFile(fileName, data);
 
 }
 
 // TODO: Create a function to initialize app
-function init() { 
-
+const init = () => { 
+    inquirer
+        .prompt(questions)
+        .then((response) => {
+            writeToFile('README.md',generateMarkdown(response));
+        })
 }
 // Function call to initialize app
 
 init();
-//* use inquiter to display questios to user
+//* use inquiter to display questions to user
 //* call generateMarkdown funcoin on the data collected
 //* take what is returned to us, then pass it to the writeToFile funciton
