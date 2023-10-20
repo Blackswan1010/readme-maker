@@ -6,33 +6,34 @@ const axios = require("axios");
 const renderLicenseBadge = (license) => {
   switch (license) {
     case 'MIT':
-      return;
+      return "![License: MIT](https://img.shields.io/badge/MIT-blue.svg)";
 
     case 'Apache 2.0':
-      return;
+      return "![License: Apache 2.0](https://img.shields.io/badge/Apache-2.0-blue.svg)";
 
     case 'General Public v3':
-      return;
+      return "![License: General Public v3](https://img.shields.io/badge/AGPL-v3-blue.svg)";
 
     case 'BSD 2-Clause':
-      return;
+      return "![License: BSD 2-Clause](https://img.shields.io/badge/BSD_2-blue.svg)";
 
     case 'BSD 3-Clause':
-      return;
+      return "![License: BSD 3-Clause](https://img.shields.io/badge/BSD_3-blue.svg)";
+
     case 'Boost Software':
-      return;
+      return "![License: Boost Software](https://img.shields.io/badge/BSL-1.0-blue.svg)";
 
     case 'Creative Commons Zero':
-      return;
+      return "![License: Creative Commons Zero](https://img.shields.io/badge/CC0-1.0-blue.svg)";
 
     case 'Eclipse Public':
-      return;
+      return "![License: Eclipse Public](https://img.shields.io/badge/EPL-2.0-blue.svg)";
 
     case 'Unlicense':
-      return;
+      return "![License: Unlicense](https://img.shields.io/badge/Unlicense-blue.svg)";
 
     case 'Mozzila Public':
-      return;
+      return "![License: Mozzila Public](https://img.shields.io/badge/MPL-2.0-blue.svg)";
 
     default: return '';
   }
@@ -45,7 +46,7 @@ const renderLicenseLink = (license) => {
   //* return a string that has the link to selected license
 
   if (license) {
-    return axios.get("https://api.github.com/licenses/" + license);;
+    return axios.get("https://api.github.com/licenses/" + license);
   } else {
     return '';
   }
@@ -59,15 +60,18 @@ const renderLicenseSection = (license) => {
   //* call renderlicenseBadge and renderlicenseLink
   //* use template literal to format license section and call functions
   //* return template literal
-  if (renderLicenseBadge(license) && renderLicenseLink(license)) {
-    return renderLicenseBadge(license);
+  const badge = renderLicenseBadge(license);
+  const link = renderLicenseLink(license);
+
+  if (badge && link) {
+    return `${badge} \n ${link}`;
   } else {
     return '';
   }
 
 }
-// TODO: Create a function to generate markdown for README
 
+// TODO: Create a function to generate markdown for README
 const generateMarkdown = (data) => {
   //* create layout of what you markdown readme with template literals
   //* hint - call renderlicense functions inside this function
@@ -83,34 +87,26 @@ const generateMarkdown = (data) => {
   ${data.installation} \n
 
   ## Usage \n
-  ${data.usage} \n
+  ![alt text](assets/images/screenshot.png) \n
 
   ## Author Info \n
-  #### ${data.name}\n
-  ``md\n
-  * [Github](https://github.com/${data.githubName}) \n
-  ``\n
+  #### ${data.author}\n
+  * [https://github.com/${data.githubName}](https://github.com/${data.githubName}) \n
 
   ## Credits \n
   ${data.credits} \n
 
-  ## License \n
-  ${data.license} \n
-
-  ## Badges \n
-  ${data.badges} \n
+  ## License
+  ${renderLicenseSection(data.license)} \n
 
   ## Features \n
   ${data.features} \n
-
   ## Contributing \n
+
   ${data.contribution} \n
 
-  ## Tests \n
-  ${data.tests} \n
-
 `
-  renderLicenseSection();
+    ;
 
   ;
 

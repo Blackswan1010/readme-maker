@@ -8,7 +8,7 @@ const questions = [
     {
         message: 'What is your name?',
         type: 'input',
-        name: 'name',
+        name: 'author',
     },
     {
         message: 'What is the title of your project?',
@@ -16,9 +16,15 @@ const questions = [
         name: 'title',
     },
     {
-        message: 'Enter a description for your project.',
+        message: 'Enter a description of your project.',
         type: 'input',
         name: 'description',
+    },
+    {
+        message: 'Check any titled Sections you may need for your Table of Contents',
+        type: 'checkbox',
+        name: 'contents',
+        choices: ['Installation', 'Usage', 'Credits', 'License', 'None']
     },
     {
         message: 'Choose a license for your project.',
@@ -27,14 +33,14 @@ const questions = [
         choices: ['MIT', 'Apache 2.0', 'General Public v3', 'BSD 2-Clause', 'BSD 3-Clause', 'Boost Software', 'Creative Commons Zero', 'Eclipse Public', 'Unlicense', 'Mozzila Public']
     },
     {
-        message: 'Enter a description for your project.',
+        message: 'List your collaborators, if any: ',
         type: 'input',
-        name: 'description',
+        name: 'credits',
     },
     {
-        message: 'Enter a description for your project.',
+        message: 'List your features, if any: ',
         type: 'input',
-        name: 'description',
+        name: 'features',
     },
     {
         message: 'What is the name of the Github repository?',
