@@ -1,6 +1,6 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+// Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-//*must have a couple license options
+// must have a couple license options
 const axios = require("axios");
 
 const renderLicenseBadge = (license) => {
@@ -39,27 +39,27 @@ const renderLicenseBadge = (license) => {
   }
 
 }
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
 
+// Create a function that returns the license link
+// there is no license, return an empty string
 const renderLicenseLink = (license) => {
   //* return a string that has the link to selected license
 
   if (license) {
-    return axios.get("https://api.github.com/licenses/" + license);
+    return "https://api.github.com/licenses/" + license;
   } else {
     return '';
   }
 
 }
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
 
+// Create a function that returns the license section of README
+// If there is no license, return an empty string
 const renderLicenseSection = (license) => {
-  //* create a conditional to check if license exists
-  //* call renderlicenseBadge and renderlicenseLink
-  //* use template literal to format license section and call functions
-  //* return template literal
+  // create a conditional to check if license exists
+  // call renderlicenseBadge and renderlicenseLink
+  // use template literal to format license section and call functions
+  // return template literal
   const badge = renderLicenseBadge(license);
   const link = renderLicenseLink(license);
 
@@ -71,43 +71,57 @@ const renderLicenseSection = (license) => {
 
 }
 
-// TODO: Create a function to generate markdown for README
+const renderTable = (data) => {
+  let twoStr = [];
+  for(let i=0; i < data.contents.length; i++){
+    twoStr.push(`${data.contents[i]}(#${data.contents[i].toLowerCase()}) \n`);
+  }
+  const newStr = twoStr.toString().replace(',','');
+
+  return newStr;
+}
+
+// Create a function to generate markdown for README
 const generateMarkdown = (data) => {
-  //* create layout of what you markdown readme with template literals
-  //* hint - call renderlicense functions inside this function
+  // create layout of what you markdown readme with template literals
+  console.log(data.contents);
+  console.log(data.contents.length);
+  console.log(data.contents[0],data.contents[1],data.contents[2]);
   return `# ${data.title} \n
 
-  ## Description \n
-  ${data.description} \n
+## Description \n
+${data.description} \n
 
-  ## Table of Contents \n
-  ${data.contents} \n
+## Table of Contents \n
+${renderTable(data)} \n
 
-  ## Installation \n
-  ${data.installation} \n
+## Installation \n
+${data.installation} \n
 
-  ## Usage \n
-  ![alt text](assets/images/screenshot.png) \n
+## Usage \n
+![alt text](assets/images/screenshot.png) \n
 
-  ## Author Info \n
-  #### ${data.author}\n
-  * [https://github.com/${data.githubName}](https://github.com/${data.githubName}) \n
+## Author Info \n
+#### ${data.author}\n
+* [https://github.com/${data.githubName}](https://github.com/${data.githubName}) \n
 
-  ## Credits \n
-  ${data.credits} \n
+## Credits \n
+${data.credits} \n
 
-  ## License
-  ${renderLicenseSection(data.license)} \n
+## License
+${renderLicenseSection(data.license)} \n
 
-  ## Features \n
-  ${data.features} \n
-  ## Contributing \n
+## Features \n
+${data.features} \n
 
-  ${data.contribution} \n
+## Contributing \n
+${data.contributions} \n
+
+## Tests \n
+${data.tests} \n
 
 `
     ;
-
   ;
 
 }

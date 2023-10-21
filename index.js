@@ -1,9 +1,11 @@
-// TODO: Include packages needed for this application
+// Including packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown");
 
-// TODO: Create an array of questions for user input
+// Create an array of questions for user input
+// add type, name, and message for each question
+// add questions:  added readme sections (description, usage, license, etc)
 const questions = [
     {
         message: 'What is your name?',
@@ -24,7 +26,7 @@ const questions = [
         message: 'Check any titled Sections you may need for your Table of Contents',
         type: 'checkbox',
         name: 'contents',
-        choices: ['Installation', 'Usage', 'Credits', 'License', 'None']
+        choices: ['Installation', 'Usage', 'Credits', 'License', 'Features', 'Contributing', 'Tests']
     },
     {
         message: 'Choose a license for your project.',
@@ -33,14 +35,29 @@ const questions = [
         choices: ['MIT', 'Apache 2.0', 'General Public v3', 'BSD 2-Clause', 'BSD 3-Clause', 'Boost Software', 'Creative Commons Zero', 'Eclipse Public', 'Unlicense', 'Mozzila Public']
     },
     {
-        message: 'List your collaborators, if any: ',
+        message: 'List your collaborators if any: hit "ENTER" to skip',
+        type: 'input',
+        name: 'installation',
+    },
+    {
+        message: 'List your collaborators if any: hit "ENTER" to skip',
         type: 'input',
         name: 'credits',
     },
     {
-        message: 'List your features, if any: ',
+        message: 'List your features if any: hit "ENTER" to skip',
         type: 'input',
         name: 'features',
+    },
+    {
+        message: 'Add guidelines for developers that wish to contribute to your project if any: hit "ENTER" to skip',
+        type: 'input',
+        name: 'contributions',
+    },
+    {
+        message: 'Explain your tests if any on how to run them: hit "ENTER" to skip',
+        type: 'input',
+        name: 'tests',
     },
     {
         message: 'What is the name of the Github repository?',
@@ -50,11 +67,7 @@ const questions = [
 ];
 
 
-
-//* add type, name, and message for each question
-//* add questions:  added readme sections (description, usage, license, etc)
-
-// TODO: Create a function to write README file
+// Create a function to write README file
 const writeToFile = (fileName, data) => {
     //* use FS module to write data and fileName to readme file
     fs.writeFile(fileName, data, (err) =>
@@ -62,17 +75,17 @@ const writeToFile = (fileName, data) => {
     );
 }
 
-// TODO: Create a function to initialize app
+// Create a function to initialize app
 const init = () => {
     inquirer
         .prompt(questions)
         .then((response) => {
-            writeToFile('README.md', generateMarkdown(response));
+            writeToFile('generatedREADME.md', generateMarkdown(response));
         })
 }
 // Function call to initialize app
 
 init();
-//* use inquiter to display questions to user
-//* call generateMarkdown funcoin on the data collected
-//* take what is returned to us, then pass it to the writeToFile funciton
+// use inquiter to display questions to user
+// call generateMarkdown funcoin on the data collected
+// take what is returned to us, then pass it to the writeToFile function
