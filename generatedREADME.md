@@ -1,24 +1,24 @@
-# Readme Maker 
+# Readme Generator 
 
 
 ## Description 
 
-Making a readme generator with Node JS! 
+Making a readme generator with Node JS 
 
 
 ## Table of Contents 
 
-[Usage](#usage)<br/>[License](#license)<br/> 
+[Installation](#installation)<br/>[Usage](#usage)<br/>[Credits](#credits)<br/>[License](#license)<br/>[Features](#features)<br/>[Contributions](#contributions)<br/>[Tests](#tests)<br/> 
 
 
 ## Installation 
 
-N/A 
+Step 
 
 
 ## Usage 
 
-![alt text](N/A) 
+![alt text](Desc) 
 
 
 ## Author Info 
@@ -30,7 +30,7 @@ N/A
 
 ## Credits 
 
-N/A 
+People 
 
 
 ## License
@@ -40,15 +40,19 @@ N/A
 
 ## Features 
 
-N/A 
+Features 
 
 
 ## Contributing 
 
-N/A 
+Guide 
 
 
 ## Tests 
 
- 
+Tests 
+
+
+## Questions
+You can reach me at meow@gmail.com for any additional questions.
 

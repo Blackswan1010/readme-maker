@@ -114,6 +114,10 @@ ${data.contributions} \n
 
 ## Tests \n
 ${data.tests} \n
+
+## Questions
+You can reach me at ${data.email} for any additional questions.
+
 `
     ;
   ;

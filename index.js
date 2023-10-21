@@ -69,6 +69,11 @@ const questions = [
         type: 'input',
         name: 'githubName',
     },
+    {
+        message: 'What is your email?',
+        type: 'input',
+        name: 'email',
+    },
 ];
 
 
