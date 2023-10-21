@@ -44,13 +44,11 @@ const renderLicenseBadge = (license) => {
 // there is no license, return an empty string
 const renderLicenseLink = (license) => {
   //* return a string that has the link to selected license
-
   if (license) {
-    return "https://api.github.com/licenses/" + license;
+    return "https://api.github.com/licenses/" + license.replace(' ', '-');
   } else {
     return '';
   }
-
 }
 
 // Create a function that returns the license section of README
@@ -68,15 +66,15 @@ const renderLicenseSection = (license) => {
   } else {
     return '';
   }
-
 }
 
+// Create a function that renders the table of contents
 const renderTable = (data) => {
   let twoStr = [];
   for(let i=0; i < data.contents.length; i++){
-    twoStr.push(`${data.contents[i]}(#${data.contents[i].toLowerCase()}) \n`);
+    twoStr.push(`[${data.contents[i]}](#${data.contents[i].toLowerCase()})<br/>`);
   }
-  const newStr = twoStr.toString().replace(',','');
+  const newStr = twoStr.toString().replaceAll(',','');
 
   return newStr;
 }
@@ -84,9 +82,6 @@ const renderTable = (data) => {
 // Create a function to generate markdown for README
 const generateMarkdown = (data) => {
   // create layout of what you markdown readme with template literals
-  console.log(data.contents);
-  console.log(data.contents.length);
-  console.log(data.contents[0],data.contents[1],data.contents[2]);
   return `# ${data.title} \n
 
 ## Description \n
@@ -99,7 +94,7 @@ ${renderTable(data)} \n
 ${data.installation} \n
 
 ## Usage \n
-![alt text](assets/images/screenshot.png) \n
+![alt text](${data.usage}) \n
 
 ## Author Info \n
 #### ${data.author}\n
@@ -119,7 +114,6 @@ ${data.contributions} \n
 
 ## Tests \n
 ${data.tests} \n
-
 `
     ;
   ;

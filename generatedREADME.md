@@ -1,31 +1,24 @@
-# asdasd 
+# Readme Maker 
 
 
 ## Description 
 
-asdasd 
+Making a readme generator with Node JS! 
 
 
 ## Table of Contents 
 
-Installation(#installation) 
-,Usage(#usage) 
-,Credits(#credits) 
-,License(#license) 
-,Features(#features) 
-,Contributing(#contributing) 
-,Tests(#tests) 
- 
+[Usage](#usage)<br/>[License](#license)<br/> 
 
 
 ## Installation 
 
- 
+N/A 
 
 
 ## Usage 
 
-![alt text](assets/images/screenshot.png) 
+![alt text](N/A) 
 
 
 ## Author Info 
@@ -37,26 +30,25 @@ Installation(#installation)
 
 ## Credits 
 
- 
+N/A 
 
 
 ## License
-![License: Apache 2.0](https://img.shields.io/badge/Apache-2.0-blue.svg) 
- https://api.github.com/licenses/Apache 2.0 
+![License: MIT](https://img.shields.io/badge/MIT-blue.svg) 
+ https://api.github.com/licenses/MIT 
 
 
 ## Features 
 
- 
+N/A 
 
 
 ## Contributing 
 
- 
+N/A 
 
 
 ## Tests 
 
  
-
 

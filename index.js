@@ -8,25 +8,30 @@ const generateMarkdown = require("./utils/generateMarkdown");
 // add questions:  added readme sections (description, usage, license, etc)
 const questions = [
     {
-        message: 'What is your name?',
+        message: 'What is your name:',
         type: 'input',
         name: 'author',
     },
     {
-        message: 'What is the title of your project?',
+        message: 'What is the title of your project:',
         type: 'input',
         name: 'title',
     },
     {
-        message: 'Enter a description of your project.',
+        message: 'Enter a description of your project:',
         type: 'input',
         name: 'description',
     },
     {
-        message: 'Check any titled Sections you may need for your Table of Contents',
+        message: 'Enter a filepath for images to be added if any, hit "ENTER" to skip:',
+        type: 'input',
+        name: 'usage',
+    },
+    {
+        message: 'Check any titled Sections you may need for your Table of Contents:',
         type: 'checkbox',
         name: 'contents',
-        choices: ['Installation', 'Usage', 'Credits', 'License', 'Features', 'Contributing', 'Tests']
+        choices: ['Installation', 'Usage', 'Credits', 'License', 'Features', 'Contributions', 'Tests']
     },
     {
         message: 'Choose a license for your project.',
@@ -35,27 +40,27 @@ const questions = [
         choices: ['MIT', 'Apache 2.0', 'General Public v3', 'BSD 2-Clause', 'BSD 3-Clause', 'Boost Software', 'Creative Commons Zero', 'Eclipse Public', 'Unlicense', 'Mozzila Public']
     },
     {
-        message: 'List your collaborators if any: hit "ENTER" to skip',
+        message: 'Provide a step by step instruction description to run the application, hit "ENTER" to skip:',
         type: 'input',
         name: 'installation',
     },
     {
-        message: 'List your collaborators if any: hit "ENTER" to skip',
+        message: 'List your collaborators if any, hit "ENTER" to skip:',
         type: 'input',
         name: 'credits',
     },
     {
-        message: 'List your features if any: hit "ENTER" to skip',
+        message: 'List your features if any, hit "ENTER" to skip:',
         type: 'input',
         name: 'features',
     },
     {
-        message: 'Add guidelines for developers that wish to contribute to your project if any: hit "ENTER" to skip',
+        message: 'Add guidelines for developers that wish to contribute to your project if any, hit "ENTER" to skip:',
         type: 'input',
         name: 'contributions',
     },
     {
-        message: 'Explain your tests if any on how to run them: hit "ENTER" to skip',
+        message: 'Explain your tests if any on how to run them, hit "ENTER" to skip:',
         type: 'input',
         name: 'tests',
     },
