@@ -1,9 +1,9 @@
-# Readme Generator 
+# TBA 
 
 
 ## Description 
 
-Making a readme generator with Node JS 
+Making a project with something 
 
 
 ## Table of Contents 
@@ -13,12 +13,12 @@ Making a readme generator with Node JS
 
 ## Installation 
 
-Step 
+ 
 
 
 ## Usage 
 
-![alt text](Desc) 
+![alt text]() 
 
 
 ## Author Info 
@@ -30,7 +30,7 @@ Step
 
 ## Credits 
 
-People 
+ 
 
 
 ## License
@@ -40,19 +40,19 @@ People
 
 ## Features 
 
-Features 
+ 
 
 
-## Contributing 
+## Contributions
 
-Guide 
+ 
 
 
 ## Tests 
 
-Tests 
+ 
 
 
 ## Questions
-You can reach me at meow@gmail.com for any additional questions.
+You can reach me at -------- for any additional questions.
 

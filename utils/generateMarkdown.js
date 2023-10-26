@@ -109,7 +109,7 @@ ${renderLicenseSection(data.license)} \n
 ## Features \n
 ${data.features} \n
 
-## Contributing \n
+## Contributions \n
 ${data.contributions} \n
 
 ## Tests \n
